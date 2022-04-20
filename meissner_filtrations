@@ -1,6 +1,0 @@
-\resizebox{\textwidth}{!}{\begin{tikzcd}[ampersand replacement=\&]
-H_n(Y_1;G) \arrow[rr,bend left] \arrow[rdd, bend right] \arrow[rd] \&
-\& H_n(Y_2;G) \arrow[ld]	\\
-							\& H_n(X;G)	\&	\\
-							\& H_n(Y_3;G) \arrow[u] \arrow[ruu,bend right]\&
-\end{tikzcd}}
