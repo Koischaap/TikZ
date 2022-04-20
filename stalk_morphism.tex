@@ -1,0 +1,22 @@
+	% Use standalone to generate PDF images
+	% Recommended in slower machines and big files!
+\documentclass{standalone}
+
+	% Standard LaTeX libs
+\usepackage{mathrsfs}
+
+	% TikZ
+\usepackage{tikz-cd}
+
+	% Enable if using Overleaf to speed up compialtion times
+	%\usepgfplotslibrary{external}
+	%\tikzexternalize
+
+\begin{document}
+\begin{tikzcd}
+                                                          & \mathscr{F}_x                                                   &                                            \\
+	\mathscr{F}(U) \arrow[rr] \arrow[d,"\phi"] \arrow[ru] &                                                                 & \mathscr{F}(V) \arrow[d,"\phi"] \arrow[lu] \\
+	\mathscr{G}(U) \arrow[rr] \arrow[rd]                  &                                                                 & \mathscr{G}(V) \arrow[ld]                  \\
+                                                          & \mathscr{G}_x \arrow[dashed, from=uuu, crossing over, "\phi_x"] &
+\end{tikzcd}
+\end{document}

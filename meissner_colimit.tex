@@ -1,6 +1,30 @@
+<<<<<<< HEAD
 \begin{tikzcd}
 \ms{A}_i \arrow[rr,bend left,"f_{ij}"] \arrow[rdd, bend right,"f_{ik}"'] \arrow[rd] &
 & \ms{A}_j \arrow[ld]	\\
 							& \displaystyle\lim_{\longrightarrow}\ms{A}	&	\\
 							& \ms{A}_k \arrow[u] \arrow[ruu,bend right,"f_{kj}"']&
 \end{tikzcd}
+=======
+	% Use standalone to generate PDF images
+	% Recommended in slower machines and big files!
+\documentclass{standalone}
+
+	% Standard LaTeX libs
+\usepackage{mathrsfs}
+
+	% TikZ
+\usepackage{tikz-cd}
+
+	% Enable if using Overleaf to speed up compialtion times
+	%\usepgfplotslibrary{external}
+	%\tikzexternalize
+
+\begin{document}
+\begin{tikzcd}
+\mathscr{A}_i \arrow[rr,bend left,"f_{ij}"] \arrow[rdd, bend right,"f_{ik}"'] \arrow[rd] &                                                          & \mathscr{A}_j \arrow[ld] \\
+							                                                             & \displaystyle\lim_{\longrightarrow}\mathscr{A}	        &	                       \\
+							                                                             & \mathscr{A}_k \arrow[u] \arrow[ruu,bend right,"f_{kj}"'] &
+\end{tikzcd}
+\end{document}
+>>>>>>> 1adb806 (starting to compile the examples)

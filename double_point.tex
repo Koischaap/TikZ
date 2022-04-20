@@ -1,4 +1,20 @@
-\resizebox{\textwidth}{!}{\begin{tikzpicture}
+	% Use standalone to generate PDF images
+	% Recommended in slower machines and big files!
+\documentclass{standalone}
+
+	% Standard LaTeX libs
+	%\usepackage{amssymb}
+
+	% Custom TikZ
+\usepackage{tikz}
+\usetikzlibrary{3d}
+
+	% Enable if using Overleaf to speed up compialtion times
+	%\usepgfplotslibrary{external}
+	%\tikzexternalize
+
+\begin{document}
+\begin{tikzpicture}
 	\draw (-.7,2) node {$D^2(f)$};
 
 	% The circle that stands for D^2(f)
@@ -25,4 +41,5 @@
 	\draw (3.1,3.1) node {$\Delta$};
 	\draw (1.1,4.1) node {$C_i$};
 	\draw (3.9,1.9) node {$D_j$};
-\end{tikzpicture}}
+\end{tikzpicture}
+\end{document}

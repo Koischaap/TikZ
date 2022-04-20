@@ -1,6 +1,0 @@
-\begin{tikzcd}
-														& \ms{F}_x											 			&										\\
-	\ms{F}(U) \arrow[rr] \arrow[d,"\phi"] \arrow[ru]	&																& \ms{F}(V) \arrow[d,"\phi"] \arrow[lu]	\\
-	\ms{G}(U) \arrow[rr] \arrow[rd]					 	&																& \ms{G}(V) \arrow[ld]					\\
-														& \ms{G}_x \arrow[dashed, from=uuu, crossing over, "\phi_x"] 	&										\\
-\end{tikzcd}
