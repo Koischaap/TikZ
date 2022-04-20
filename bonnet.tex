@@ -1,0 +1,21 @@
+	% Use standalone to generate PDF images
+	% Recommended in slower machines and big files!
+\documentclass{standalone}
+
+	% Standard LaTeX libs
+\usepackage{mathrsfs}
+
+	% TikZ
+\usepackage{tikz-cd}
+
+	% Enable if using Overleaf to speed up compialtion times
+	%\usepgfplotslibrary{external}
+	%\tikzexternalize
+
+\begin{document}
+\begin{tikzcd}
+                                             & V \arrow[rd, hook] \arrow[d] &                                           \\
+U \arrow[d, "\mathscr{S}"'] \arrow[ru, hook] & \mathscr{S}V \arrow[ld]      & W \arrow[d, "\mathscr{S}"]                \\
+\mathscr{S}U                                 &                              & \mathscr{S}W \arrow[ll, dashed] \arrow[lu]
+\end{tikzcd}
+\end{document}

@@ -1,0 +1,21 @@
+	% Use standalone to generate PDF images
+	% Recommended in slower machines and big files!
+\documentclass{standalone}
+
+	% Standard LaTeX libs
+\usepackage{amssymb}
+
+	% Custom TikZ
+\usepackage{nicetikz}
+
+	% Use compatibility for PGF plots
+	% (Recommended by TeXlive)
+\pgfplotsset{compat=1.18}
+
+	% Enable if using Overleaf to speed up compialtion times
+	%\usepgfplotslibrary{external}
+	%\tikzexternalize
+
+\begin{document}
+	\input{}
+\end{document}

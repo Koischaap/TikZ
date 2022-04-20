@@ -1,0 +1,19 @@
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+	\draw[pattern=dots, opacity=0.3, dashed] (0,0) circle (2) circle (3);
+	\draw (-2.75,2.75) node {$\mathbb{K}^n$};
+
+		%long arrows
+	\draw[->] (2.75,0) -- (1.25,0);
+	\draw[->] (-2.75,0) -- (-1.25,0);
+	\draw[->] (0,2.75) -- (0,1.25);
+	\draw[->] (0,-2.75) -- (0,-1.25);
+
+		%short arrows
+	\draw[->] (2,2) -- (1.5,1.5);
+	\draw[->] (-2,2) -- (-1.5,1.5);
+	\draw[->] (2,-2) -- (1.5,-1.5);
+	\draw[->] (-2,-2) -- (-1.5,-1.5);
+
+	\draw[fill=white] (0,0) node {$S^n$} circle (1cm);
+\end{tikzpicture}}

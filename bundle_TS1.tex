@@ -1,0 +1,29 @@
+	% Use standalone to generate PDF images
+	% Recommended in slower machines and big files!
+\documentclass{standalone}
+
+	% Standard LaTeX libs
+	%\usepackage{amssymb}
+
+	% Custom TikZ
+\usepackage{tikz}
+\usetikzlibrary{3d}
+
+	% Enable if using Overleaf to speed up compialtion times
+	%\usepgfplotslibrary{external}
+	%\tikzexternalize
+
+\begin{document}
+\begin{tikzpicture}
+	\begin{scope}[canvas is xz plane at y=0]
+	\draw (0,0,0) circle (1cm);
+	\end{scope}
+
+	\draw[dashed] (3/5,-1,-4/5) -- (3/5,-.5,-4/5);
+	\draw (3/5,-.5,-4/5) -- (3/5,.5,-4/5) node [left] {$T_xS^1$};
+	\draw[dashed] (3/5,.5,-4/5) -- (3/5,1,-4/5);
+	\draw[fill] (3/5,0,-4/5) circle (.5pt) node [above right] {$x$};
+	
+	\draw (-1,0,-1) node {$S^1$};
+\end{tikzpicture}
+\end{document}
