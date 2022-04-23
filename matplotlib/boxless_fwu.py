@@ -17,8 +17,7 @@ Z=x*y*y*y   # Alternative: x*np.power(y,3)
 
 fig = plt.figure()      # Generate a figure called "fig"
 
-# Initialise (create) a 1 x 1 grid of subplots and only show the first one
-ax = fig.add_subplot(111, projection='3d')
+ax = fig.add_subplot(projection='3d')
 ax.axis('off')          # Hide the "background box"
-ax.plot_surface(X,Y,Z)  # Draw plot (will not show)
+ax.plot_surface(X,Y,Z)  # Draw solid surface (will not show)
 fig.show()              # Show "fig"
