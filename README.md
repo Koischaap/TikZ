@@ -1,5 +1,5 @@
-# TikZ
-Some examples of diagrams done in TikZ and PGF, in varying degrees of complexity.
+# Examples
+Some examples of code in TikZ and Python's _matplotlib_, in varying degrees of complexity.
 In general, each example only introduces one or two things each.
 
 ## Acknowledgements
