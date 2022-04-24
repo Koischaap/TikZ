@@ -1,4 +1,3 @@
-from matplotlib import cm                   # Colour gradient (colormap)
 import matplotlib.pyplot as plt             # Generate plots
 from mpl_toolkits.mplot3d import Axes3D     # Have a 3D env
 
@@ -13,15 +12,17 @@ x,y = np.meshgrid(interval,interval)
 
 # Define the parametric equations
 X=x
-Y=y*y       # Alternative: np.power(y,2)
-Z=x*y*y*y   # Alternative: x*np.power(y,3)
+Y=y*y
+Z=y*y*y
+
+XX=0
+YY=x
+ZZ=y
 
 fig = plt.figure()      # Generate a figure called "fig"
 
 ax = fig.add_subplot(projection='3d')
 ax.axis('off')          # Hide the "background box"
-ax.plot_surface(X,Y,Z, cmap=cm.ocean)
+ax.plot_surface(X,Z,Y, cmap=cm.ocean)
+ax.plot_surface(XX,YY,ZZ, cmap=cm.ocean)
 fig.show()              # Show "fig"
-
-# You can also save it without interacting with the window:
-fig.savefig('folded_umbrella.eps')
