@@ -1,0 +1,103 @@
+	% Use standalone to generate PDF images
+	% Recommended in slower machines and big files!
+\documentclass{standalone}
+
+	% Standard LaTeX libs
+\usepackage{amssymb, mathrsfs}
+
+	% Custom TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc}
+
+	% Enable if using Overleaf to speed up compialtion times
+	%\usepgfplotslibrary{external}
+	%\tikzexternalize
+
+\begin{document}
+\begin{tikzpicture}
+	% Main diagram
+	% Use local bounding boxes to group objects in a single box!
+	\begin{scope}[local bounding box = diagram]
+		\draw[fill = black] (0,0) circle [radius = .05];
+		
+		\draw [thick] (-4,0) -- (4,0);
+
+		\draw [dashed, thick] (0,0) parabola (4,2);
+		\draw [thick] (0,0) parabola (-4,2);
+	\end{scope}
+
+	% N
+	% Use shifting for relative positioning!
+	\begin{scope}[shift = {( $(diagram.north) + (0, 1cm)$ )}]
+		\node (n) {};
+		\draw [dashed] (n) circle [radius = 1];
+				
+		% This will make sure all the plots stop at around the same point
+		\clip (n) circle [radius = 1.5];
+		\draw plot[smooth, domain = -2:2] (\x*\x, \x*\x*\x*\x*\x + \x/2);
+	\end{scope}
+
+	% NE
+	\begin{scope}[shift = {( $(diagram.north east) + (1cm , 2cm)$ )},
+				local bounding box = nebox]
+		\node (ne) {};
+		\draw [dashed] (ne) circle [radius = 1];
+		\clip (ne) circle [radius = 1.5];
+		\draw plot[smooth, domain = -2:2] (\x*\x, \x*\x*\x + \x*\x*\x*\x*\x);
+	\end{scope}
+
+	\draw [<-] (4.5,0) to [bend right = 30] (nebox.south);
+
+	% SE
+	\begin{scope}[shift = {( $(diagram.south east) - (0, 2 cm)$ )},
+				local bounding box = sebox]
+		\node (se) {};
+		\draw [dashed] (se) circle [radius = 1];
+		\clip (se) circle [radius = 1.5];
+		\draw plot[smooth, domain = -2:2] (\x*\x, \x*\x*\x*\x*\x);
+	\end{scope}
+
+	\draw (sebox.north west) rectangle (sebox.south east);
+
+	% S
+	\begin{scope}[shift = {( $(diagram.south) - (0, 2 cm)$ )}]
+		\node (s) {};
+		\draw [dashed] (s) circle [radius=1];
+		\clip (s) circle [radius=1.5];
+		\draw plot[smooth, domain=-2:2] (\x*\x, \x*\x*\x*\x*\x - \x/2);
+	\end{scope}
+
+	% SW
+	\begin{scope}[shift = {( $(diagram.south west) + (-1 cm, -2 cm)$ )},
+				local bounding box = swbox]
+		\node (sw) {};
+		\draw [dashed] (sw) circle [radius=1];
+		\clip (sw) circle [radius=1.5];
+		\draw plot[smooth, domain=-2:2] (\x*\x/2, \x*\x*\x*\x*\x - \x*\x*\x);
+	\end{scope}
+
+	\draw [<-] (-4.5,0) to [bend right = 30] (swbox.north);
+
+	% W
+	\begin{scope}[shift = {( $(diagram.west) - (2.5 cm, 0)$ )},
+				local bounding box = wbox]
+		\node (w) {};
+		\draw [dashed] (w) circle [radius=1];
+		\clip (w) circle [radius=1.5];
+		\draw plot[smooth, domain=-2:2] (\x*\x/4, \x*\x*\x*\x*\x/4 - 4*\x*\x*\x/4 + 2*\x/4);
+	\end{scope}
+
+	\draw [<-] (-4,1) to [bend right] (wbox.east);
+
+	% NW
+	\begin{scope}[shift = {( $( diagram.north west) + (-1 cm, 2 cm)$ )},
+					local bounding box = nwbox]
+		\node (nw) {};
+		\draw [dashed] (nw) circle [radius = 1];
+		\clip (nw) circle [radius = 1.5];
+		\draw plot[smooth, domain = -2:2] (\x*\x/2, \x*\x*\x*\x*\x - 2*\x*\x*\x + \x);
+	\end{scope}
+
+	\draw[<-] (-3,2) to [bend right] (nwbox.east);
+\end{tikzpicture}	
+\end{document}
