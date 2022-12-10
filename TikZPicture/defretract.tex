@@ -3,11 +3,12 @@
 \documentclass{standalone}
 
 	% Standard LaTeX libs
-	\usepackage{amssymb}
+\usepackage{amssymb}
 
-	% Custom TikZ
 \usepackage{tikz}
-\usetikzlibrary{3d, patterns, spath3}
+
+	% Spath3 allows to manipulate soft paths
+\usetikzlibrary{patterns,spath3}
 
 	% Enable if using Overleaf to speed up compialtion times
 	%\usepgfplotslibrary{external}
@@ -17,8 +18,7 @@
 \begin{tikzpicture}
 	\path[spath/save=Sn] (0,0) circle (1);
 	\draw [pattern=dots, opacity=.3, dashed,
-			% This line "isolates" Sn by reversing the path direction
-		spath/insert reverse=Sn]
+		spath/insert reverse=Sn] % "Isolate" Sn by reversing the path direction
 		(0,0) circle (3);
 	\draw[opacity=.3, dashed] (0,0) circle (2);
 	\draw (-2.75,2.75) node {$\mathbb{K}^n$};
